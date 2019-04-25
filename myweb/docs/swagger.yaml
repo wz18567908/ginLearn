@@ -1,0 +1,68 @@
+basePath: '{{.BasePath}}'
+host: 192.168.0.5:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /hello/:
+    get:
+      consumes:
+      - application/json
+      description: get data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: hello
+          schema:
+            type: string
+  /job/sub:
+    post:
+      consumes:
+      - application/json
+      description: submit lsf job
+      parameters:
+      - description: string valid
+        in: query
+        name: jobName
+        type: string
+      - description: string valid
+        in: query
+        name: cwd
+        type: string
+      - description: string valid
+        in: query
+        name: cmd
+        type: string
+      produces:
+      - application/json
+  /user/add:
+    post:
+      consumes:
+      - application/json
+      description: add user
+      parameters:
+      - description: int valid
+        in: query
+        name: Id
+        type: integer
+      - description: string valid
+        in: query
+        name: Name
+        type: string
+      - description: int valid
+        in: query
+        name: Age
+        type: integer
+      produces:
+      - application/json
+swagger: "2.0"
